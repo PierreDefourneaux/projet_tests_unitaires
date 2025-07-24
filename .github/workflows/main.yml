@@ -15,4 +15,10 @@ jobs:
         with:
           service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
           api-key: ${{ secrets.MY_RENDER_API_KEY }}
-          wait-for-success: true
+      - name: Run tests
+        run: pytest -vv
+        env:
+          HOST_MONGODB: ${{ secrets.HOST_MONGODB }}
+          MONGO_DB_APPNAME: ${{ secrets.MONGO_DB_APPNAME }}
+          PASSWORD_MONGODB: ${{ secrets.PASSWORD_MONGODB }}
+          USER_MONGODB: ${{ secrets.USER_MONGODB }}

@@ -12,3 +12,10 @@ def client():
     with flask_app.test_client() as client:
         yield client
 
+# Assurez vous que la forme de sortie du vectorizer est cohérente avec la forme
+#  d'entrée du classifieur (Logistic regression)
+
+def test_vectorizer_shape():
+    from app import vectorizer, model
+    assert vectorizer.get_feature_names_out().shape[0] == model.n_features_in_
+     
