@@ -29,3 +29,5 @@ def test_check_classifier_output():
     transformed_phrase = vectorizer.transform(["Ceci est une phrase test"])
     probabilities = model.predict_proba(transformed_phrase)[0]
     assert probabilities.sum() == 1
+
+# tester l'intégration avec mise en cache
