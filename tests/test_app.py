@@ -24,7 +24,7 @@ def test_vectorizer_shape(): # pas besoin de client ici car on n'utilise pas de 
 # Assurez-vous que la probabilité de la prédiction de la classe prédite
 # est comprise entre 0 et 1 (en sortie de predict_proba() du classifieur)
 
-def check_classifier_output():
+def test_check_classifier_output():
     from app import vectorizer, model
     transformed_phrase = vectorizer.transform(["Ceci est une phrase test"])
     probabilities = model.predict_proba(transformed_phrase)[0]
