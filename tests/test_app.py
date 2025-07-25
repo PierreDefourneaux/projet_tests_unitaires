@@ -26,6 +26,6 @@ def test_check_classifier_output():
     assert probabilities.sum() == 1
 
 # Assurez-vous que la requête GET sur la page d'accueil (route "/") renvoie bien le code HTTP 200.
-def test_code200():
+def test_code200(client):
     response = client.get("/")
     assert response.status_code == 200
