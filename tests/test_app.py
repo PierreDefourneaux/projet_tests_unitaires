@@ -27,5 +27,5 @@ def test_check_classifier_output():
 
 # Assurez-vous que la requête GET sur la page d'accueil (route "/") renvoie bien le code HTTP 200.
 def test_code200():
-    response = requests.get("/")
+    response = client.get("/")
     assert response.status_code == 200
