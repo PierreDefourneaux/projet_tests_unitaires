@@ -3,7 +3,7 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import pytest
 from app import app as flask_app
-import requests
+from sklearn.linear_model import LogisticRegression
 
 @pytest.fixture
 def client():
@@ -29,3 +29,9 @@ def test_check_classifier_output():
 def test_code200(client):
     response = client.get("/")
     assert response.status_code == 200
+
+# Assurez-vous que le classifieur est bien une instance de 
+# la classe LogisticRegression (classe importée depuis sklearn.linear_model)
+def test_model_LogReg_class():
+    from app import model
+    assert isinstance(model, LogisticRegression)
